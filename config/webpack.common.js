@@ -4,6 +4,8 @@ const CopyPlugin = require("copy-webpack-plugin");
 module.exports = function(env){
   const isProduction = env.production
   return {
+    //entry写上相对路径时，并不是相对于当前文件所在路径，而是相对于context配置的路径
+    // context:path.resolve(__dirname,'../'),
     entry: "./src/index.js",
     output: {
       path: path.resolve(__dirname, "../dist"),
